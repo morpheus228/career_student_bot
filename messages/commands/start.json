@@ -1,0 +1,12 @@
+{
+    "text": [
+        "Привет!"
+    ],
+
+    "keyboard": {
+        "type": "inline",
+        "keys": [
+            [{"text":"Начать", "callback_data": "start"}]
+        ]
+    }
+}
