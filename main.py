@@ -9,6 +9,9 @@ from aiogram.types import BotCommand
 
 from handlers.commands import router as command_router
 from handlers.mailings import router as mailings_router
+from handlers.menu import router as menu_router
+from handlers.categories import router as categories_router
+
 # from handlers.form import router as form_router
 
 from config import Config
@@ -22,8 +25,8 @@ logging.basicConfig(level=logging.INFO)
 def register_routers(dp: Dispatcher):
     dp.include_router(command_router)
     dp.include_router(mailings_router)
-    # dp.include_router(form_router)
-    # dp.include_router(swiping_router)
+    dp.include_router(categories_router)
+    dp.include_router(menu_router)
     
 
 # def register_middlewares(dp: Dispatcher):
