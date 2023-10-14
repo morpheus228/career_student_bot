@@ -7,3 +7,4 @@ class Repository:
 		self.engine = engine
 		
 		self.users: Users = UsersPostgres(engine)
+		self.posts: Posts = PostsPostgres(engine)

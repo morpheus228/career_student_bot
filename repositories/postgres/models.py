@@ -14,3 +14,18 @@ class User(Base):
     last_name = Column(String(100))
     created_at = Column(DateTime(), default=datetime.utcnow)
 
+
+class Post(Base):
+    __tablename__ = 'Users'
+
+    id = Column(BigInteger, primary_key=True)
+    source_type = Column(Integer)
+
+    text = Column(String(100))
+    photo = Column(String(256))
+    link = Column(String(1024))
+
+    status = Column(String(100))
+    
+    created_at = Column(DateTime(), default=datetime.utcnow)
+

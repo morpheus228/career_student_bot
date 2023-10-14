@@ -3,6 +3,8 @@ from sqlalchemy import create_engine
 from config import PostgresConfig
 
 from .users import UsersPostgres
+from .posts import PostsPostgres
+
 from .models import Base
 
 

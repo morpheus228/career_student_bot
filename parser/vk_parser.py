@@ -3,7 +3,6 @@ import httpx
 from pydantic import BaseModel, Field
 
 
-
 class VkPost(BaseModel):
     id: int
     is_ads: bool = Field(alias="marked_as_ads")

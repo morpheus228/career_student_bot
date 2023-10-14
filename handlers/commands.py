@@ -10,5 +10,12 @@ router = Router()
 
 @router.message(Command('start'))
 async def start(message: Message, state: FSMContext):
-    text, reply_markup = MessageTemplate.from_json('commands/start').render()
+    text, reply_markup = MessageTemplate.from_json('commands/start').render(first_name=message.from_user.first_name)
     await message.answer(text=text, reply_markup=reply_markup)
+
+
+@router.callback_query(F.data == 'start')
+async def start_button(callback: CallbackQuery, state: FSMContext):
+    text, reply_markup = MessageTemplate.from_json('mailings/answer').render()
+    await callback.message.edit_text(text=text, reply_markup=reply_markup)
+
