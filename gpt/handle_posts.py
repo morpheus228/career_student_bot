@@ -10,7 +10,7 @@ context = """по тексту определи к какой категории
 
 prompt = "bla bla bla"
 
-openai.api_key = "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"
+openai.api_key = "sk-***"
 
 categories = {"1": "Стажировки",
               "2": "Олимпиады",
