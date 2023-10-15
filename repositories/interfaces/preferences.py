@@ -28,3 +28,7 @@ class Preferences(ABC):
 	@abstractmethod
 	def get_user_tags(self, user_id: int) -> list[Tag]:
 		pass
+
+	@abstractmethod
+	def get_post_tags(self, post_id: int) -> list[Tag]:
+		pass

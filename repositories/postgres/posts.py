@@ -28,6 +28,8 @@ class PostsPostgres(Posts):
 				session.add(PostTag(post_id=post.id, tag_id=tag.id))
 
 			session.commit()
+			
+		return post
 	
 	def get_by_id(self, post_id: int) -> Post|None:
 		with Session(self.engine) as session:

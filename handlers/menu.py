@@ -89,14 +89,14 @@ async def show_post(callaback: CallbackQuery, state: FSMContext, service: Servic
         return
     
     post = await service.menu.get_post_by_id(post_id)
-    
+
     text, reply_markup = MessageTemplate.from_json('menu/post').render(post=post)
     reply_markup = get_keyboard(cur_index, len(post_ids))
 
     if callaback.message.photo is None:
 
         if post.photo is None:
-            await callaback.message.edit_text(text=post.text, reply_markup=reply_markup)
+            await callaback.message.edit_text(text=text, reply_markup=reply_markup)
             
         else:
             photo = URLInputFile(post.photo)

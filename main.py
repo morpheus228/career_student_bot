@@ -10,7 +10,7 @@ from middlewares.user_availability import UserAvailabilityMiddleware
 from handlers.commands import router as command_router
 from handlers.mailings import router as mailings_router
 from handlers.menu import router as menu_router
-from handlers.categories import router as categories_router
+from handlers.add_post import router as add_post_router
 
 from config import Config
 from on_startup import on_first_startup
@@ -24,7 +24,7 @@ logging.basicConfig(level=logging.INFO)
 def register_routers(dp: Dispatcher):
     dp.include_router(command_router)
     dp.include_router(mailings_router)
-    dp.include_router(categories_router)
+    dp.include_router(add_post_router)
     dp.include_router(menu_router)
     
 

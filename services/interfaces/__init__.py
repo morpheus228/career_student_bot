@@ -1,5 +1,6 @@
 from .preferences import Preferences
 from .menu import Menu
+from .mailing import Mailing
 
 from aiogram.filters.callback_data import CallbackData
 

@@ -1,7 +1,7 @@
 from sqlalchemy.orm import Session
 
 from ..interfaces import Preferences
-from .models import Category, Tag, UserCategory, UserTag
+from .models import Category, PostTag, Tag, UserCategory, UserTag
 
 
 class PreferencesPostgres(Preferences):
@@ -37,3 +37,8 @@ class PreferencesPostgres(Preferences):
 		with Session(self.engine) as session:
 			user_tags = session.query(UserTag).filter(UserTag.user_id == user_id).all()
 			return [session.query(Tag).get(tag.tag_id) for tag in user_tags]
+		
+	def get_post_tags(self, post_id: int) -> list[Tag]:
+		with Session(self.engine) as session:
+			post_tags = session.query(PostTag).filter(PostTag.post_id == post_id).all()
+			return [session.query(Tag).get(tag.tag_id) for tag in post_tags]
