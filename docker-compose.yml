@@ -15,11 +15,11 @@ services:
         volumes:
             - career_postgres_data:/var/lib/postgresql/data
 
-    # bot:
-        # build: .
-        # depends_on:
-        #     - postgres
-        # env_file: .env
+    bot:
+        build: .
+        depends_on:
+            - postgres
+        env_file: .env
 
 
 volumes:
