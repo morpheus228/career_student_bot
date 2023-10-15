@@ -1,14 +1,5 @@
 {
     "text": [
-        "Выбери интересные для тебя категории"
-    ],
-
-    "keyboard": {
-        "type": "inline",
-        "keys": [
-            [{"text":"Программирование", "callback_data": "mailing_activate"}], 
-            [{"text":"Бизнес", "callback_data": "mailing_cancel"}],
-            [{"text":"Приборостроение", "callback_data": "mailing_cancel"}]
-        ]
-    }
+        "Выбери интересные тебе категории:"
+    ]
 }

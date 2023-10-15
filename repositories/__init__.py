@@ -1,3 +1,3 @@
 from .repository import Repository
 
-from .interfaces import Users, Forms, Matches, Rates, Swiping
+from .interfaces import Users, TagsCategories, Preferences, Posts , Menu              

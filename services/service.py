@@ -7,8 +7,7 @@ from .interfaces import *
 
 
 class Service:
-	def __init__(self, repository: Repository, config: Config, bot: Bot):
-		self.forms: Forms = FormsService(repository.forms, bot)
-		self.swiping: Swiping = SwipingService(repository.swiping, repository.rates, repository.matches, self.forms)
-		self.answers: Answers = AnswersService()
+	def __init__(self, repository: Repository):
+		self.preferences: Preferences = PreferencesService(repository.tags_categories, repository.preferences, repository.users)
+		self.menu: Menu = MenuService(repository.menu, repository.posts)	
 

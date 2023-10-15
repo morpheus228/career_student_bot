@@ -1,3 +1,2 @@
-from .forms import FormsService
-from .answers import AnswersService
-from .swiping import SwipingService
+from .preferences import PreferencesService
+from .menu import MenuService

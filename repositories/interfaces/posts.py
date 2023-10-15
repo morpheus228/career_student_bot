@@ -10,7 +10,11 @@ class Posts(ABC):
 		pass
 
 	@abstractmethod
-	def create(self, post: Post) -> int:
+	def create(self, text: str, photo: str, link: str, category: str, tags: list[str], source_type: int = 0):
+		pass
+
+	@abstractmethod
+	def create_tag(self, post_id: int):
 		pass
 	
 	@abstractmethod

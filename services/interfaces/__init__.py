@@ -1,7 +1,14 @@
-from .forms import Forms
-from .answers import Answers
-from .swiping import Swiping
+from .preferences import Preferences
+from .menu import Menu
+
+from aiogram.filters.callback_data import CallbackData
 
 
-class NoFormsError(Exception):
-    pass
+class SelectCD(CallbackData, prefix="select_object"):
+    id: int
+    object_type: str
+    is_selected: bool
+
+
+class ChooseCD(CallbackData, prefix="choose_object"):
+    id: int

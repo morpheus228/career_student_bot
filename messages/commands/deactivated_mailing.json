@@ -1,0 +1,12 @@
+{
+    "text": [
+        "❌ У вас выключена персонализированная рассылка материалов.\n\n"
+    ],
+
+    "keyboard": {
+        "type": "inline",
+        "keys": [
+            [{"text":"✅ Включить", "callback_data": "mailing_activate"}]
+        ]
+    }
+}

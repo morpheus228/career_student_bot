@@ -4,6 +4,9 @@ from config import PostgresConfig
 
 from .users import UsersPostgres
 from .posts import PostsPostgres
+from .tags_categories import TagsCategoriesPostgres
+from .preferences import PreferencesPostgres
+from .menu import MenuPostgres
 
 from .models import Base
 

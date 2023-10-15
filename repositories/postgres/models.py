@@ -16,54 +16,57 @@ class User(Base):
     created_at = Column(DateTime(), default=datetime.utcnow)
 
 
+class Category(Base):
+    __tablename__ = 'Categories'
+
+    id = Column(BigInteger, primary_key=True)
+    title = Column(String(256))
+
+
+class Tag(Base):
+    __tablename__ = 'Tags'
+
+    id = Column(BigInteger, primary_key=True)
+    title = Column(String(256))
+
+
 class Post(Base):
-    __tablename__ = 'Users'
+    __tablename__ = 'Posts'
 
     id = Column(BigInteger, primary_key=True)
 
     source_type = Column(Integer)
 
-    text = Column(String(100))
-    photo = Column(String(256))
+    text = Column(String(1024))
+    photo = Column(String(1024))
     link = Column(String(1024))
 
     category_id = Column(BigInteger, ForeignKey('Categories.id', ondelete='CASCADE'))
 
-    status = Column(String(100))
+    status = Column(Integer, default=0)
     
     created_at = Column(DateTime(), default=datetime.utcnow)
 
 
-class Category:
-    __tablename__ = 'Categories'
-
-    id = Column(BigInteger, primary_key=True)
-    title = Column(String(256))
-
-
-class Tag:
-    __tablename__ = 'Categories'
-
-    id = Column(BigInteger, primary_key=True)
-    title = Column(String(256))
-
-
-class PostTag:
+class PostTag(Base):
     __tablename__ = 'PostTag'
 
+    id = Column(BigInteger, primary_key=True)
     post_id = Column(BigInteger, ForeignKey('Posts.id', ondelete='CASCADE'))
     tag_id = Column(BigInteger, ForeignKey('Tags.id', ondelete='CASCADE'))
 
 
-class UserTag:
-    __tablename__ = 'PostTag'
+class UserTag(Base):
+    __tablename__ = 'UserTag'
 
+    id = Column(BigInteger, primary_key=True)
     user_id = Column(BigInteger, ForeignKey('Users.id', ondelete='CASCADE'))
     tag_id = Column(BigInteger, ForeignKey('Tags.id', ondelete='CASCADE'))
 
 
-class UserCategory:
+class UserCategory(Base):
     __tablename__ = 'UserCategory'
 
+    id = Column(BigInteger, primary_key=True)
     user_id = Column(BigInteger, ForeignKey('Users.id', ondelete='CASCADE'))
     category_id = Column(BigInteger, ForeignKey('Categories.id', ondelete='CASCADE'))
